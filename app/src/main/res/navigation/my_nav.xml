@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/viewFragment">
+
+    <fragment
+        android:id="@+id/batteryManagerFragment"
+        android:name="com.example.batterymanagerpractice.BatteryManagerFragment"
+        android:label="BatteryManagerFragment" >
+        <action
+            android:id="@+id/action_batteryManagerFragment_to_viewBatteryDataFragment"
+            app:destination="@id/viewBatteryDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="com.example.batterymanagerpractice.ViewFragment"
+        android:label="fragment_view"
+        tools:layout="@layout/fragment_view" >
+        <action
+            android:id="@+id/action_viewFragment_to_batteryManagerFragment"
+            app:destination="@id/batteryManagerFragment" />
+        <action
+            android:id="@+id/action_viewFragment_to_viewBatteryDataFragment"
+            app:destination="@id/viewBatteryDataFragment" />
+        <action
+            android:id="@+id/action_viewFragment_to_viewConnectivityData"
+            app:destination="@id/viewConnectivityData" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectivityManagerFragment"
+        android:name="com.example.batterymanagerpractice.ConnectivityManagerFragment"
+        android:label="fragment_connectivity_manager"
+        tools:layout="@layout/fragment_connectivity_manager" >
+        <action
+            android:id="@+id/action_connectivityManagerFragment_to_viewFragment"
+            app:destination="@id/viewFragment" />
+        <action
+            android:id="@+id/action_connectivityManagerFragment_to_viewConnectivityData"
+            app:destination="@id/viewConnectivityData" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBatteryDataFragment"
+        android:name="com.example.batterymanagerpractice.viewBatteryDataFragment"
+        android:label="fragment_view_battery_data"
+        tools:layout="@layout/fragment_view_battery_data" />
+    <fragment
+        android:id="@+id/viewConnectivityData"
+        android:name="com.example.batterymanagerpractice.viewConnectivityDataFragment"
+        android:label="fragment_view_connectivity_data"
+        tools:layout="@layout/fragment_view_connectivity_data" />
+</navigation>
